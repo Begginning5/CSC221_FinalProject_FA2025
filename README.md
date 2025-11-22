@@ -10,6 +10,8 @@ This is the CSC221FA2025 Final Project for Group4.
   <li><h3>Part2</h3></li>
 <ol>
   <li>Update teammate's code to graph/plot the web scraping data provided via CSV file.</li>
+  <li>Record Group Project Presentation demonstrating plot/graph code.</li>
+  <li>Group Project Self and Teammate Evaluation forms.</li>
 </ol>
 </ul
 <h3>Group4</h3>
