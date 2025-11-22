@@ -1,6 +1,10 @@
 # CSC221_FinalProject_FA2025
 This is the CSC221FA2025 Final Project for Group4.
 <h1>Web Scraping from Wikipedia Median Income</h1>
+<ol>
+  <li>Develope code to perform web scraping to collect data.</li>
+  <li>Save data to a CSV formatted file.</li>
+</ol>
 <h3>Group4</h3>
 <p><bold>Owner:</bold> Christopher O'Brien [<hyperlink>cmobrien3@my.waketech.edu</hyperlink>]</p>
 <p><bold>Project Description:</bold> Web Scraping projct to gether data from the Median Income - Wikipedia page and graph/plot the data in a meaningful way.</p>
