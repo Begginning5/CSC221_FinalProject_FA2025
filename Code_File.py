@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 
 # The first part of the assignment is to pull the table off of the webpage.
 # I am converting the table directly to the CSV file.
+
+#So no this will write a csv directly and doesn't follow the assignment directions.
 html = urlopen('https://en.wikipedia.org/wiki/Median_income')
 bs = BeautifulSoup(html, 'html.parser')
 
