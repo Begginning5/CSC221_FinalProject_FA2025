@@ -1,32 +1,32 @@
 #Group 2 Code File.
+#<------------------------------------------------>
+# Working code to take the code directly from the webpage to the file.
 import csv
 
-from urlib.request import urlopen
+from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 
-# The first part of the assignment is to pull the table off of the webpage.
-# I am converting the table directly to the CSV file.
 
-#So no this will write a csv directly and doesn't follow the assignment directions.
-html = urlopen('https://en.wikipedia.org/wiki/Median_income')
+url = 'https://en.wikipedia.org/wiki/Median_income'
+req = Request(url, headers = {'User-Agent':'Mozilla/5.0'})
+html = urlopen(req)
 bs = BeautifulSoup(html, 'html.parser')
+#<---------------------------------------------------------------->
+# Code to create a table 
+import pandas as pd
 
-# The main comparison table is currently the first table on the page.
-table = bs.find('table',{'class':'wikitable'})
-rows = table.findAll('tr')
-csvFile = open('countries.csv','wt+')
-writer = csv.writer(csvFile)
-try:
-  for row in rows:
-    csvRow=[]
-    for cell in row.findAll(['td','th']):
-      csvRow.append(cell.get_text().strip())
-    writer.writerow(csvRow)
-finally:
-  csvFile.close()
+A=[]
+B=[]
 
-# I have 2 options I can take the information from the webpage and convert it into tables.
-
-  
-# Or I can take the information on the CSV and convert it into a webpage. 
-
+for row in table.find_all('tr'):
+    cells = [cell.get_text(strip=True) for cell in row.find_all(["th","td"])]
+    if cells:
+        A.append(cells[0])
+        num_str = "".join(ch for ch in cells[1] if ch.isdigit() or ch == ".")
+        B.append(float(num_str))
+    
+df = pd.DataFrame({'Location':A,'2021 USD':B})
+df
+#<-------------------------------------------------------------------->
+# This should output the file using the correct directions
+df.to_csv("right_file", index=False)
