@@ -18,6 +18,8 @@ import pandas as pd
 A=[]
 B=[]
 
+table = bs.find("table")
+
 for row in table.find_all('tr'):
     cells = [cell.get_text(strip=True) for cell in row.find_all(["th","td"])]
     if cells:
